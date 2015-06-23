@@ -1,0 +1,165 @@
+.homepage-background {
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $homepage-padding-vertical: 5em;
+  $homepage-padding-horizontal: 0.4em;
+  $homepage-screen-width: 14em;
+  $homepage-screen-height: 25em;
+  $homepage-background: darken(gray, 40%);
+  $homepage-backside-background: darken($homepage-background, 10%);
+  $homepage-text-color: white;
+  $homepage-background-top: #162C4C;
+  $homepage-background-bottom: #0A120D;
+  $gradient-angle: 10deg;
+  $homepage-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  $homepage-screen-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/cosmin_capitanu_screen.jpg';
+
+  @include background(url($homepage-image), linear-gradient($gradient-angle, $homepage-background-bottom, $homepage-background-top), no-repeat $homepage-background-top scroll);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-height: 20em;
+  width: 100%;
+
+
+  .homepage-text {
+    color: $homepage-text-color;
+    padding: 2em;
+
+    @include media($large-screen) {
+      float: left;
+      max-width: 50%;
+      padding: 4em;
+    }
+
+    .homepage-links{
+      position: bottom;
+    }
+
+    h4 {
+      border-bottom: 1px solid transparentize($homepage-text-color, 0.7);
+      font-size: 1.5em;
+      margin: 0 0 0.5em 0;
+      padding-bottom: 0.5em;
+    }
+
+    p {
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .homepage {
+    display: none;
+    position: relative;
+
+    @include media($large-screen) {
+      @include transform(
+        perspective(800px)
+        translateX(0px)
+        translateY(-100px)
+        translateZ(50px)
+        rotateX(0deg)
+        rotateY(-20deg)
+        rotateZ(-0deg));
+      background: $homepage-background;
+      border-radius: 2em;
+      box-shadow:
+        1px 0px lighten($homepage-backside-background, 20%),
+        4px 0px lighten($homepage-backside-background, 2%),
+        7px 0px $homepage-backside-background,
+        10px 0px $homepage-backside-background,
+        13px 0px $homepage-backside-background;
+      display: block;
+      float: right;
+      margin-bottom: -12em;
+      margin-right: 5em;
+      padding: $homepage-padding-vertical 0;
+      width: $homepage-screen-width + (2 * $homepage-padding-horizontal);
+      z-index: 99999;
+
+      .screen {
+        @include size($homepage-screen-width $homepage-screen-height);
+        background-image: url($homepage-screen-image);
+        background-size: cover;
+        border-radius: 0.2em;
+        box-shadow: inset 0 1px 8px transparentize(black, 0.5);
+        margin: auto;
+      }
+    }
+  }
+}
+
+.side-image {
+  $base-line-height: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $side-image-background-top: #B5EBEB;
+  $side-image-background-bottom: #5DAC5D;
+  $side-image-content-background: #F9F9F9;
+  $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%);
+
+  background: $side-image-content-background;
+
+  @include media($large-screen) {
+    @include row(table);
+  }
+
+  .images-wrapper {
+    @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+    background-color: $side-image-background-top;
+    background-size: cover;
+    border-bottom: $side-image-border;
+    display: block;
+    min-height: 12em;
+    padding: 3em;
+
+    @include media($large-screen) {
+      @include span-columns(4);
+      background-position: bottom;
+      background-size: cover;
+      border-right: $side-image-border;
+    }
+  }
+
+  .side-image-content {
+    @include span-columns(12);
+    padding: 1em 1em 4em 1em;
+
+    @include media($large-screen) {
+      @include span-columns(8);
+      padding: 4em 4em 8em 4em;
+    }
+
+    h1 {
+      margin-bottom: 0.9em;
+    }
+
+    h4 {
+      background: #BBB;
+      color: white;
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: 800;
+      margin-bottom: 1.3em;
+      padding: 3px 8px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+      margin-bottom: 3em;
+    }
+  }
+
+  @include reset-display();
+}
