@@ -3,6 +3,8 @@ require 'test_helper'
 class AnAuthenticatedUserHasBetterMatchSelections < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
+  test 'Show pending matches first in queue' do
+
 # Iteration 3: Better Match Suggestion
 #
 # Our current setup is getting somewhere, but a match isn't that useful until both users have approved it. Let's improve our match recommendation algorithm to help facilitate this.
@@ -27,5 +29,7 @@ class AnAuthenticatedUserHasBetterMatchSelections < ActionDispatch::IntegrationT
 # Note that there is no difference in the Interface between an initial ("blind") recommendation and a pending match (One where the other party has already clicked, "Approve"). This information is (so far) not visible to the user.
 #
 # Also Note that so far we don't need to do anything with the match information we are collecting. For now just focus on getting the recommendation-display portion wired up.
+
+  end
 
 end
