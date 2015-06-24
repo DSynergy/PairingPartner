@@ -9,8 +9,9 @@
       <ul>
       <% Language.all.each do |language| %>
         <li>
-          <%= check_box_tag language.name, user_languages.include?(language), class: "filled-in" %>
-        </li>
+          <%= check_box_tag "language-" + language.id.to_s, language.id, current_user.languages.include?(language), class: "filled-in" %>
+          <label for=<%="language-" + language.id.to_s %>> <%= language.name %></label>
+       </li>
       <% end %>
       </ul>
       <%= f.submit "Update yourself. Improve yourself" %>

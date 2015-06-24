@@ -1,9 +1,8 @@
-class CreateUserLanguages < ActiveRecord::Migration
+class CreateUserLanguagesTable < ActiveRecord::Migration
   def change
     create_table :user_languages do |t|
       t.integer :user_id
       t.integer :language_id
-      t.timestamps null: false
     end
   end
 end

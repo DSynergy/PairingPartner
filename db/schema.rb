@@ -11,43 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624014118) do
+ActiveRecord::Schema.define(version: 20150624062428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "languages", force: :cascade do |t|
-    t.boolean  "JavaScript"
-    t.boolean  "Java"
-    t.boolean  "Ruby"
-    t.boolean  "C"
-    t.boolean  "CSS"
-    t.boolean  "PHP"
-    t.boolean  "Python"
-    t.boolean  "CPlusPlus"
-    t.boolean  "ObjectiveC"
-    t.boolean  "CSharp"
-    t.boolean  "Shell"
-    t.boolean  "R"
-    t.boolean  "CoffeeScript"
-    t.boolean  "Go"
-    t.boolean  "Perl"
-    t.boolean  "Scala"
-    t.boolean  "VimL"
-    t.boolean  "Clojure"
-    t.boolean  "Haskell"
-    t.boolean  "Erlang"
-    t.boolean  "Rust"
-    t.boolean  "Swift"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string "name"
   end
 
   create_table "user_languages", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "language_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "user_id"
+    t.integer "language_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150624014118) do
     t.datetime "updated_at",  null: false
     t.string   "email"
     t.string   "token"
+    t.string   "provider"
   end
 
 end

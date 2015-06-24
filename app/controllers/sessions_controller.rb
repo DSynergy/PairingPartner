@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
     if new_user?
       session[:user_id] = @user.id
       redirect_to edit_user_path(@user.id)
-      flash[:notice] = "Welcome friend-o. Just a little more information before we proceed, if you will."
+      flash[:success] = "Welcome friend-o. Just a little more information before we proceed, if you will."
     elsif @user
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
-      flash[:alert] = "You are signed in with Github"
+      flash[:notice] = "You are signed in with Github"
     else
       redirect_to root_path
       flash[:error] = "Something strange happened. Please try again?"
@@ -20,14 +20,14 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    flash[:notice] = "You have been logged out. Bye boo"
+    flash[:alert] = "You have been logged out. Bye boo"
     redirect_to root_path
   end
 
   private
 
   def new_user?
-    @user && @user.description == nil
+    @user && @user.description == nil || @user.languages.count == 0
   end
 
 end
