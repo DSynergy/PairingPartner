@@ -5,7 +5,7 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
 
   OmniAuth.config.test_mode = true
 
-  def create_users
+  def create_users_and_sign_in
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
                                                                   "provider" => "github",
                                                                   "uid"      => "666",
@@ -29,13 +29,12 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
     user.languages.create(name: "Ruby")
     user = User.create(name: "uglyplatypus321", description: "description2")
     user.languages.create(name: "C++")
-
   end
 
-
-
   test 'From dashboard, should be able to go to "find pairs screen" and when suggesting a match, the application should display their info' do
-    create_users
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
     visit 'users/1'
     click_link_or_button "Find Your Perfect Pair Pooky"
     assert page.has_content?("sexykitten123")
@@ -44,7 +43,9 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
   end
 
   test "Below the other user's information, I should have 2 options" do
-    create_users
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
     visit 'users/1'
     click_link_or_button "Find Your Perfect Pair Pooky"
     assert page.has_content?("Hot")
@@ -52,7 +53,9 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
   end
 
   test 'When a user approves a match (button on the right)' do
-    create_users
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
     visit 'users/1'
     click_link_or_button "Find Your Perfect Pair Pooky"
     click_link_or_button "Hot"
@@ -63,7 +66,9 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
   end
 
   test 'When a user rejects a match (button on the left) ' do
-    create_users
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
     visit 'users/1'
     click_link_or_button "Find Your Perfect Pair Pooky"
     click_link_or_button "Not"

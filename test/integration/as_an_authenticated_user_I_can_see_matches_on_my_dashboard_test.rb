@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AsAnAuthenticatedUserICanSeeMatchesOnMyDashboard< ActionDispatch::IntegrationTest
+class AsAnAuthenticatedUserICanSeeMatchesOnMyDashboardTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test 'A completed match notifies you and shows up on your dashboard' do

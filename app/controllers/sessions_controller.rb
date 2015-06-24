@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
     if new_user?
       session[:user_id] = @user.id
+      create_blank_matches
       redirect_to edit_user_path(@user.id)
       flash[:success] = "Welcome friend-o. Just a little more information before we proceed, if you will."
     elsif @user
@@ -25,6 +26,12 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def create_blank_matches
+    User.all.each do |user2|
+      Match.create(user_id: @user.id, matchee_id: user2.id) unless @user.id == user2.id
+    end
+  end
 
   def new_user?
     @user && @user.description == nil || @user.languages.count == 0

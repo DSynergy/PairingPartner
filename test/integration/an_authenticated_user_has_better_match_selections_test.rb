@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AnAuthenticatedUserHasBetterMatchSelections < ActionDispatch::IntegrationTest
+class AnAuthenticatedUserHasBetterMatchSelectionsTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test 'Show pending matches first in queue' do

@@ -11,8 +11,8 @@ class Match < ActiveRecord::Base
   def self.new_matches(matcher)
     potential_matches = []
     pending_matches = []
-    pending_matches << Match.where(status: "pending", user_id: !matcher.id)
-    potential_matches << Match.where(status: "potential", user_id: matcher.id).shuffle
+    pending_matches << Match.where(status: "pending").where(user_id: !matcher.id)
+    potential_matches << Match.where(status: "potential").where(user_id: matcher.id).shuffle
     pending_matches.flatten + potential_matches.flatten
   end
 

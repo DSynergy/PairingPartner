@@ -3,11 +3,12 @@ class Seed
   def call
     create_languages
     create_users
-    creatue_user_languages
+    create_user_languages
     create_matches
   end
 
   def create_languages
+    puts "creating languages"
     Language.create(name: "JavaScript")
     Language.create(name: "Java")
     Language.create(name: "Ruby")
@@ -34,6 +35,7 @@ class Seed
 
 
   def create_users
+    puts "creating_users"
 
     User.create(
         nickname:"121watts",
@@ -611,7 +613,8 @@ class Seed
 
   end
 
-  def creatue_user_languages
+  def create_user_languages
+    puts "creating_user_languages"
     User.all.each do |user|
       Language.all.each do |language|
         if rand(2) == 0
@@ -622,6 +625,7 @@ class Seed
   end
 
   def create_matches
+    puts "creating_matches"
     User.all.each do |user1|
       User.all.each do |user2|
         Match.create(user_id: user1.id, matchee_id: user2.id) unless user1.id == user2.id

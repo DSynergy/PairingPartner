@@ -77,6 +77,25 @@
 
     <% end %>
 
+    <% if current_user.matches.where(status: 3).count > 0 %>
+      <h2>These are your current matches!!</h2>
+
+    <% current_user.matches.where(status: 3).each do |match|  %>
+      <li class="bullet">
+        <div class="bullet-icon bullet-icon-2">
+          <%= image_tag(match.avatar_url) if match.avatar_url %>
+        </div>
+        <div class="bullet-content">
+          <h2><%= match.name ? match.name : match.nickname %></h2>
+          <p>
+            <%= match.description %>
+          </p>
+          <p><%= current_user.hireable %></p>
+        </div>
+      </li>
+      <% end %>
+    <% end %>
+
   </ul>
 
 <hr>

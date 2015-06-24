@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AsAnAuthenticatedUserICanBeMatchedUp < ActionDispatch::IntegrationTest
+class AsAnAuthenticatedUserICanBeMatchedUpTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test 'Notifying a user of a new match' do
