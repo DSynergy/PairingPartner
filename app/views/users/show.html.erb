@@ -1,5 +1,9 @@
     <h1>Hello <%= current_user.name ? current_user.name : current_user.nickname %> </h1>
     <%= image_tag current_user.avatar_url %>
+  <div class="matches_path">
+    <%= button_to "Find Your Perfect Pair Pooky", match_path(current_user.id), method: :get, class: "button" %>
+  </div>
+
   <ul class="bullets">
     <li class="bullet">
       <div class="bullet-icon bullet-icon-1">

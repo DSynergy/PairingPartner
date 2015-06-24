@@ -14,4 +14,9 @@ Rails.application.routes.draw do
 
   get '*path', to: redirect('/') unless Rails.env.development?
 
+  post 'hot', to: "matches#hot"
+  post 'not', to: "matches#not"
+
+  get 'match', to: "matches#show"
+
 end

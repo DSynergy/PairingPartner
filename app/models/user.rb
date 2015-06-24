@@ -2,6 +2,14 @@ class User < ActiveRecord::Base
   has_many :user_languages
   has_many :languages, through: :user_languages
 
+  has_many :matches
+  has_many :matchees, through: :matches
+
+  has_many :inverse_matches, :class_name => "Match", :foreign_key => "matchee_id"
+  has_many :inverse_matchees, :through => :inverse_matches, :source => :user
+
+  validates :description, length: { maximum: 500 }
+
   def self.find_or_create_from_auth(data)
     user = User.find_or_create_by(provider: data.provider, uid: data.uid)
 
