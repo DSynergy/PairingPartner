@@ -4,14 +4,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
-  before_action :authorize!
+  before_action :user_logged_in_check
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  def authorize!
-    redirect_to root_path unless current_user && params[:controller] == 'staticpages'
+  def user_logged_in_check
+    if current_user.nil?
+      redirect_to root_path
+      flash[:alert] = "You must be signed in to view that page friend-o"
+    end
   end
 
 end

@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :hireable
       t.integer :followers
       t.integer :following
-      t.string :desription
+      t.string :description
       t.json :raw_data
       t.timestamps null: false
     end

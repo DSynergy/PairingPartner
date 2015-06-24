@@ -150,40 +150,24 @@
         null,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        null
+      ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/models/language.rb": [
+        1,
+        1,
+        1,
         null,
         null
       ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/models/user_language.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/models/user.rb": [
+        1,
+        1,
         1,
         null,
         1,
@@ -208,6 +192,10 @@
       ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/controllers/staticpages_controller.rb": [
         1,
+        1,
+        null,
+        1,
+        null,
         null,
         1,
         null,
@@ -224,11 +212,14 @@
         1,
         null,
         1,
-        6,
+        0,
         null,
         null,
         1,
-        6,
+        0,
+        0,
+        0,
+        null,
         null,
         null,
         null
@@ -250,6 +241,6 @@
         null
       ]
     },
-    "timestamp": 1435109173
+    "timestamp": 1435110818
   }
 }

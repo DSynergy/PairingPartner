@@ -4,12 +4,15 @@ class ANewUserMustSignInTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
 # Iteration 1: Account Creation / Sign In
+  def create_user
+    
+  end
 
   test 'As a new user, when I first access the site, I should be prompted to log in with GitHub' do
     visit '/'
     assert page.has_content?("Github")
-    clink_link_or_button "Begin your sojourn with Github"
-    
+    click_link_or_button "Begin your sojourn with Github"
+
   end
 
   test 'The first time I do this (initial account creation), I should be taken to a second "User Information" screen, and prompted to enter the following information:' do

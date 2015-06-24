@@ -1,0 +1,21 @@
+<div class="side-image">
+  <div class="images-wrapper"></div>
+    <div class="side-image-content">
+      <h4>It's All About You</h4>
+        <%= form_for current_user do |f| %>
+          <%= f.label :description %>
+          <%= f.text_field :description, required: true %>
+      <h4>Your Preferred Languages</h4>
+      <ul>
+      <% Language.all.each do |language| %>
+        <li>
+          <%= check_box_tag language.name, user_languages.include?(language), class: "filled-in" %>
+        </li>
+      <% end %>
+      </ul>
+      <%= f.submit "Update yourself. Improve yourself" %>
+    <% end %>
+  </div>
+
+  </div>
+</div>
