@@ -109,6 +109,11 @@
         null,
         null
       ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/config/initializers/omniauth.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/config/initializers/session_store.rb": [
         null,
         null,
@@ -145,6 +150,60 @@
         null,
         1,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/models/user.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/controllers/staticpages_controller.rb": [
@@ -160,17 +219,37 @@
         null,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
         null
       ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/application_helper.rb": [
         1,
         null
       ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/staticpages_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/users_helper.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1435100911
+    "timestamp": 1435109173
   }
 }

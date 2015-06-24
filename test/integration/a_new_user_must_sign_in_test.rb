@@ -8,6 +8,7 @@ class ANewUserMustSignInTest < ActionDispatch::IntegrationTest
   test 'As a new user, when I first access the site, I should be prompted to log in with GitHub' do
     visit '/'
     assert page.has_content?("Github")
+    clink_link_or_button "Begin your sojourn with Github"
     
   end
 

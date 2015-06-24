@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'omniauth-github'
+gem 'figaro'
 
 #front-end from thoughtbot
 gem 'bourbon'
