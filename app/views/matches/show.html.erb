@@ -5,8 +5,11 @@
     <a href="" class="match-logo"><%= image_tag(@match.avatar_url) %></a>
     <div class="match-copy">
       <h1><%= @match.name ? @match.name : @match.nickname %></h1>
+      <div class="buttons">
+      <%= button_to "OrNot", matches_not_path(matchee_id: @match.id), method: :post, class: "left" %><%= button_to "Hot", matches_hot_path(matchee_id: @match.id), method: :post, class: "right" %>
+      </div>
       <p><%= @match.description %></p>
-      <p>Their Github - creep on, creeping on: <%= @match.html_url %></p>
+      <p>Creep on, creeping on: <%= link_to "a link to their Github", (@match.html_url) %></p>
       <p>Their preferred languages: <% @match.languages.each do |language| %>
           <ul>
             <li><%= language.name %></li>
@@ -15,8 +18,6 @@
       </p>
     </div>
   </div>
-  <%= button_to "Hot", hot_matches_path(:matchee current_user.id), method: :post) %>
-  <%= button_to "OrNot", not_matches_path(not_path(current_user.id), method: :post) %>
 
   <% else %>
     <h1>There are currently no more users to match with. You blew threw them all. Impressive</h1>

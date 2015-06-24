@@ -4,6 +4,7 @@ class Seed
     create_languages
     create_users
     creatue_user_languages
+    create_matches
   end
 
   def create_languages
@@ -616,6 +617,14 @@ class Seed
         if rand(2) == 0
           UserLanguage.create(user_id: user.id, language_id: language.id)
         end
+      end
+    end
+  end
+
+  def create_matches
+    User.all.each do |user1|
+      User.all.each do |user2|
+        Match.create(user_id: user1.id, matchee_id: user2.id) unless user1.id == user2.id
       end
     end
   end

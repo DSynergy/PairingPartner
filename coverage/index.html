@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-24T04:54:20-06:00">2015-06-24T04:54:20-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-24T07:30:53-06:00">2015-06-24T07:30:53-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">74.31%</span></span>
+    (<span class="covered_percent"><span class="red">71.76%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.8
+         0.85
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>24</b> files in total.
-    <b>109</b> relevant lines. 
-    <span class="green"><b>81</b> lines covered</span> and
-    <span class="red"><b>28</b> lines missed </span>
+    <b>25</b> files in total.
+    <b>131</b> relevant lines. 
+    <span class="green"><b>94</b> lines covered</span> and
+    <span class="red"><b>37</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#e13661238a180a538f7679ac898db1a5eeed8b5d" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">60.0 %</td>
+        <td class="green strong">100.0 %</td>
         <td>20</td>
         <td>10</td>
-        <td>6</td>
-        <td>4</td>
-        <td>0.6</td>
+        <td>10</td>
+        <td>0</td>
+        <td>2.2</td>
       </tr>
       
       <tr>
@@ -78,6 +78,16 @@
         <td>4</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#57e813a3b60ec605c85626e1ee294359f9bf60ce" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
+        <td class="red strong">43.75 %</td>
+        <td>30</td>
+        <td>16</td>
+        <td>7</td>
+        <td>9</td>
+        <td>0.4</td>
       </tr>
       
       <tr>
@@ -142,21 +152,21 @@
       
       <tr>
         <td class="strong"><a href="#bdcbff916c7998bccfee2e90966a372c55ec80a5" class="src_link" title="app/models/match.rb">app/models/match.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="red strong">61.54 %</td>
+        <td>19</td>
+        <td>13</td>
+        <td>8</td>
+        <td>5</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#7d2a25326bdfadc00f5205685ba413316f1a4ef8" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">58.33 %</td>
-        <td>37</td>
-        <td>24</td>
-        <td>14</td>
-        <td>10</td>
+        <td class="red strong">59.09 %</td>
+        <td>31</td>
+        <td>22</td>
+        <td>13</td>
+        <td>9</td>
         <td>0.8</td>
       </tr>
       
@@ -283,9 +293,9 @@
       <tr>
         <td class="strong"><a href="#7b4c8b1b54209cc953bb9edce2921fb9146eef4b" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>19</td>
-        <td>10</td>
-        <td>10</td>
+        <td>22</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -309,11 +319,11 @@
         <div class="source_table" id="e13661238a180a538f7679ac898db1a5eeed8b5d">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">60.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -374,8 +384,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
           
           <code class="ruby">    @current_user ||= User.find_by(id: session[:user_id])</code>
         </li>
@@ -398,20 +408,20 @@
           <code class="ruby">  def user_logged_in_check</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="4" data-linenumber="14">
+          <span class="hits">4</span>
           
           <code class="ruby">    if current_user.nil?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
           <code class="ruby">      redirect_to root_path</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
           <code class="ruby">      flash[:alert] = &quot;You must be signed in to view that page friend-o&quot;</code>
         </li>
@@ -738,6 +748,204 @@
   </pre>
 </div>
       
+        <div class="source_table" id="57e813a3b60ec605c85626e1ee294359f9bf60ce">
+  <div class="header">
+    <h3>app/controllers/users_controller.rb</h3>
+    <h4><span class="red">43.75 %</span> covered</h4>
+    <div>
+      <b>16</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class UsersController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def show</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def edit</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">    @user = current_user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">    current_user.update(user_params)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    update_user_languages</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    redirect_to user_path(current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def user_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">    params.require(:user).permit(:description)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update_user_languages</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">    UserLanguage.where(user_id: current_user.id).delete_all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">    parsed_language_params = params.select { |key, value| key.to_s.match(/^language-/) }.values</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">    parsed_language_params.each do |id|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">      UserLanguage.create(user_id: current_user.id, language_id: id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="e91db319510f1867eaf7b021f07d61344aa17bf9">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
@@ -939,11 +1147,11 @@
         <div class="source_table" id="bdcbff916c7998bccfee2e90966a372c55ec80a5">
   <div class="header">
     <h3>app/models/match.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">61.54 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -977,7 +1185,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  enum status: %w(Potential Reject Pending Match)</code>
+          <code class="ruby">  enum status: %w(potential rejected pending matched)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1010,7 +1218,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.new_matches(matcher)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    potential_matches = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    pending_matches = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    pending_matches &lt;&lt; Match.where(status: &quot;pending&quot;, user_id: !matcher.id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">    potential_matches &lt;&lt; Match.where(status: &quot;potential&quot;, user_id: matcher.id).shuffle</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">    pending_matches.flatten + potential_matches.flatten</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -1023,11 +1279,11 @@
         <div class="source_table" id="7d2a25326bdfadc00f5205685ba413316f1a4ef8">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">58.33 %</span> covered</h4>
+    <h4><span class="red">59.09 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -1214,43 +1470,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new_match</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
-          
-          <code class="ruby">    user_matches = []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">    # user_matches = Users.all.each do |user|</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
@@ -2177,8 +2397,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2285,16 +2505,34 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &quot;matches&quot;, to: &quot;users#matches&quot;</code>
+          <code class="ruby">  post &#39;matches/hot&#39;, to: &quot;matches#hot&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  post &#39;matches/not&#39;, to: &quot;matches#not&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;matches/:id&#39;, to: &quot;matches#show&quot;, as: :match</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AnAuthenticatedUserCanMakeMatches < ActionDispatch::IntegrationTest
+class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   OmniAuth.config.test_mode = true
@@ -71,10 +71,6 @@ class AnAuthenticatedUserCanMakeMatches < ActionDispatch::IntegrationTest
     assert page.has_content?(description: "description2")
     assert page.has_content?("C++")
     assert_equal nil, current_user.matches.first
-
-#     Information should be stored on the server indicating that I am NOT interested in pairing with that user.
-#     That user should disappear and I should be shown another user account.
-#     That user should not appear in my recommendations again.
 
   end
 

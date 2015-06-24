@@ -16,7 +16,7 @@
   padding-bottom: 3em;
 
   .match-logo img {
-    height: 4em;
+    height: 20em;
     margin-bottom: 1em;
   }
 
@@ -30,6 +30,13 @@
 
     .match-copy {
       text-align: center;
+
+      .buttons .right {
+        float:right;
+      }
+      .buttons .left {
+        float:left;
+      }
 
       h1 {
         font-size: 1.6em;

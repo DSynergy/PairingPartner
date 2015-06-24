@@ -10,14 +10,10 @@ class Match < ActiveRecord::Base
 
   def self.new_matches(matcher)
     potential_matches = []
-    User.all.each do |user|
-      require 'pry';binding.pry
-      potential_matches << user.matchees.pluck(status: :potential && matcher.id != user.id)
-    end
-    User.all.each do |user|
-      pending_matches << user.matchees.pluck(status: :pending).shuffle
-    end
-    potential_matches + pending_matches
+    pending_matches = []
+    pending_matches << Match.where(status: "pending", user_id: !matcher.id)
+    potential_matches << Match.where(status: "potential", user_id: matcher.id).shuffle
+    pending_matches.flatten + potential_matches.flatten
   end
 
 end
