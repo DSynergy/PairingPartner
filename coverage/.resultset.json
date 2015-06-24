@@ -150,7 +150,7 @@
         null,
         1,
         null,
-        null,
+        1,
         null,
         1,
         1,
@@ -176,13 +176,14 @@
         1,
         1,
         1,
+        1,
         null,
         1,
-        5,
-        5,
-        5,
-        5,
-        5,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null
@@ -248,7 +249,7 @@
         1,
         null,
         1,
-        99,
+        90,
         null,
         null,
         1,
@@ -261,22 +262,6 @@
         null
       ],
       "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/matches_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/sessions_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/staticpages_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/helpers/users_helper.rb": [
         1,
         null
       ],
@@ -353,53 +338,8 @@
         null,
         null,
         null
-      ],
-      "/Users/DBomb/Turing/Module4-JS/code_challenges/PairingPartner/app/controllers/matches_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        5,
-        null,
-        null,
-        null
       ]
     },
-    "timestamp": 1435157931
+    "timestamp": 1435164111
   }
 }

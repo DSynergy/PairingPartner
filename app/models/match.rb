@@ -4,6 +4,7 @@ class Match < ActiveRecord::Base
 
   enum status: %w(potential rejected pending matched)
 
+  scope :potential, -> { where(status: 0) }
   scope :rejected, -> { where(status: 1) }
   scope :pending, -> { where(status: 2) }
   scope :matched, -> { where(status: 3) }

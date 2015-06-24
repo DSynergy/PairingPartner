@@ -2,33 +2,91 @@ require 'test_helper'
 
 class AnAuthenticatedUserHasBetterMatchSelectionsTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
+  #Iteration 3: Better Match Suggestion
 
-  test 'Show pending matches first in queue' do
+    def create_users_and_sign_in
+      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+                                                                    "provider" => "github",
+                                                                    "uid"      => "666",
+                                                                    "credentials" => {
+                                                                      "token" => "123123"},
+                                                                    "info" => {
+                                                                      "nickname" => "The Bease",
+                                                                      "name" =>  "WilliamShatner",
+                                                                      "email" => "LOLCATZ@io.com",
+                                                                    },
+                                                                    "extra" => {
+                                                                      "raw_info" => {
+                                                                      "avatar_url" => "123",
+                                                                      "html_url" => "12312",
+                                                                      "hireable" => "false",
+                                                                      "followers" => "1",
+                                                                      "following" => "1",
+                                                                    }
+                                                                    },
+                                                                  })
 
-# Iteration 3: Better Match Suggestion
-#
-# Our current setup is getting somewhere, but a match isn't that useful until both users have approved it. Let's improve our match recommendation algorithm to help facilitate this.
-#
-# When generating potential matches:
-#
-# If there are any "pending" matches from other users to me, then I should be shown those users first, followed by other users where no match information exists (as in iteration 2).
-#
-# Otherwise, I should be shown new user accounts in order, just as in iteration 2.
-#
-# In other words, users who have always Accepted a match with me should be moved to the front of my recommendation "queue".
-#
-# To help illustrate this, let's run through an example scenario:
-#
-#     User A logs in and is shown User B's account
-#     User A approves the recommendation of User B
-#     User A is then shown User C/D/E...'s accounts
-#     User B logs in and is shown User A's account first, since there is a pending match between these 2, to which User B has not yet responded.
-#     User B responds to the match by approving/rejecting
-#     User B is then shown remaining User accounts C/D/E etc
-#
-# Note that there is no difference in the Interface between an initial ("blind") recommendation and a pending match (One where the other party has already clicked, "Approve"). This information is (so far) not visible to the user.
-#
-# Also Note that so far we don't need to do anything with the match information we are collecting. For now just focus on getting the recommendation-display portion wired up.
+      user = User.create(name: "sexykitten123", description: "description")
+      user.languages.create(name: "Ruby")
+      user = User.create(name: "uglyplatypus321", description: "description2")
+      Match.create(user_id: 1, matchee_id: 2)
+      Match.create(user_id: 1, matchee_id: 3)
+    end
+
+    def create_second_user
+      OmniAuth.config.mock_auth[:github1] = OmniAuth::AuthHash.new({
+                                                                    "provider" => "github",
+                                                                    "uid"      => "6661",
+                                                                    "credentials" => {
+                                                                      "token" => "1231231"},
+                                                                    "info" => {
+                                                                      "nickname" => "The Bease1",
+                                                                      "name" =>  "WilliamShatner1",
+                                                                      "email" => "LOLCATZ@io.com1",
+                                                                    },
+                                                                    "extra" => {
+                                                                      "raw_info" => {
+                                                                      "avatar_url" => "123",
+                                                                      "html_url" => "12312",
+                                                                      "hireable" => "false",
+                                                                      "followers" => "1",
+                                                                      "following" => "1",
+                                                                    }
+                                                                    },
+                                                                  })
+
+    end
+
+
+  test 'If there are any "pending" matches from other users to me, then I should be shown those users first, followed by other users where no match information exists (as in iteration 2).' do
+    skip
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
+    fill_in "Description", with: "shrug"
+    click_link_or_button "Update yourself. Improve yourself"
+    click_link_or_button "Find Your Perfect Pair Pooky"
+    save_and_open_page
+    click_link_or_button "Hot"
+    create_second_user
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
+    fill_in "Description", with: "shrug"
+    click_link_or_button "Update yourself. Improve yourself"
+    click_link_or_button "Find Your Perfect Pair Pooky"
+    assert page.has_content?("WilliamShatner")
+  end
+
+  test 'Otherwise, I should be shown new user accounts in order, just as in iteration 2.' do
+    skip
+    create_users_and_sign_in
+    visit '/'
+    click_link_or_button "Begin your sojourn with Github"
+    fill_in "Description", with: "shrug"
+    click_link_or_button "Update yourself. Improve yourself"
+    click_link_or_button "Find Your Perfect Pair Pooky"
+    click_link_or_button "Hot"
+    assert page.has_content?("sexykitten123")
 
   end
 

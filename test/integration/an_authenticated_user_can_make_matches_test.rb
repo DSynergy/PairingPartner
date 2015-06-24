@@ -4,7 +4,7 @@ class AnAuthenticatedUserCanMakeMatchesTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   OmniAuth.config.test_mode = true
-
+  #iteration 2
   def create_users_and_sign_in
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
                                                                   "provider" => "github",

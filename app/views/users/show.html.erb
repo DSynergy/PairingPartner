@@ -1,6 +1,7 @@
-    <h1>Hello <%= current_user.name ? current_user.name : current_user.nickname %> </h1>
-    <%= image_tag current_user.avatar_url %>
   <div class="matches_path">
+    <h1>Hello <%= current_user.name ? current_user.name : current_user.nickname %> </h1>
+    <%= link_to "Logout? Sad Days", logout_path, method: :delete %></br>
+    <%= image_tag current_user.avatar_url %>
     <form action="/matches/<%=current_user.id%>">
       <input type="submit" value="Find Your Perfect Pair Pooky", class="dash-button">
     </form>
@@ -97,6 +98,3 @@
     <% end %>
 
   </ul>
-
-<hr>
-<%= link_to "Logout? Sad Days", logout_path, method: :delete %>

@@ -1,3 +1,10 @@
+.matches_path {
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  float: left;
+}
+
 .bullets {
   $base-line-height: 1.5em !default;
   $action-color: #477DCA !default;
@@ -12,6 +19,8 @@
   margin: 1em;
   overflow: auto;
   padding: 0;
+  padding-top: 5em;
+  padding-left: 3em;
 
   .bullet {
     @include flex-basis(20em);
