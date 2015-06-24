@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  get '*path', to: redirect('/') unless Rails.env.development?
+  # get '*path', to: redirect('/')
 
   post 'matches/hot', to: "matches#hot"
   post 'matches/not', to: "matches#not"

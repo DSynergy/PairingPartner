@@ -17,11 +17,13 @@ class ANewUserMustSignInTest < ActionDispatch::IntegrationTest
                                                                     "email" => "LOLCATZ@io.com",
                                                                   },
                                                                   "extra" => {
+                                                                    "raw_info" => {
                                                                     "avatar_url" => "123",
                                                                     "html_url" => "12312",
                                                                     "hireable" => "false",
                                                                     "followers" => "1",
                                                                     "following" => "1",
+                                                                  }
                                                                   },
                                                                 })
   end
