@@ -7,14 +7,14 @@ class User < ActiveRecord::Base
 
     user.name       = data.info.name
     user.nickname   = data.info.nickname
-    user.avatar_url = data.extra.avatar_url
-    user.html_url   = data.extra.html_url
-    user.hireable   = data.extra.hireable
-    user.followers  = data.extra.followers
-    user.following  = data.extra.following
+    user.avatar_url = data.extra.raw_info.avatar_url
+    user.html_url   = data.extra.raw_info.html_url
+    user.hireable   = data.extra.raw_info.hireable
+    user.followers  = data.extra.raw_info.followers
+    user.following  = data.extra.raw_info.following
     user.email      = data.info.email
     user.token      = data.credentials.token
-
+    user.raw_data   = data
     user.save
     user
 
